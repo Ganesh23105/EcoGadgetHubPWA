@@ -1,16 +1,16 @@
 const CACHE_NAME = 'eco-gadget-hub-v1';
 const urlsToCache = [
-  '/',
-  'index.html',
-  'manifest.json',
-  'icons/icon-192x192.png',
-  'icons/icon-512x512.png',
-  'images/Biodegradable-Phone-Case.webp',
-  'images/Eco-friendly-gadgets-collection.webp',
-  'images/Recycled-Wireless-Earbuds.webp',
-  'images/Smart-Eco-Light.webp',
-  'images/Solar-Phone-Charger.webp',
-  'offline.html'
+  '/EcoGadgetHubPWA/',
+  '/EcoGadgetHubPWA/index.html',
+  '/EcoGadgetHubPWA/manifest.json',
+  '/EcoGadgetHubPWA/icons/icon-192x192.png',
+  '/EcoGadgetHubPWA/icons/icon-512x512.png',
+  '/EcoGadgetHubPWA/images/Biodegradable-Phone-Case.webp',
+  '/EcoGadgetHubPWA/images/Eco-friendly-gadgets-collection.webp',
+  '/EcoGadgetHubPWA/images/Recycled-Wireless-Earbuds.webp',
+  '/EcoGadgetHubPWA/images/Smart-Eco-Light.webp',
+  '/EcoGadgetHubPWA/images/Solar-Phone-Charger.webp',
+  '/EcoGadgetHubPWA/offline.html'
 ];
 
 // Install Event
