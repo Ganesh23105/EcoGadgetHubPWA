@@ -1,7 +1,8 @@
 const CACHE_NAME = 'eco-gadget-hub-v1';
 const urlsToCache = [
   '/',
-  '/index.html',
+  'index.html',
+  'manifest.json',
   'icons/icon-192x192.png',
   'icons/icon-512x512.png',
   'images/Biodegradable-Phone-Case.webp',
