@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EcoGadgetHub – Sustainable Tech Gadgets</title>
+    <link rel="manifest" href="manifest.json" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px 10%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffa726;
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px 10%;
+        background: linear-gradient(135deg, #e8f5e9 0%, #f0f0f0 100%);
+      }
+
+      .hero-text {
+        max-width: 50%;
+      }
+
+      .hero-text h1 {
+        font-size: 40px;
+        color: #388e3c;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .hero-text p {
+        margin-bottom: 30px;
+        font-size: 18px;
+        color: #555;
+      }
+
+      .btn {
+        background-color: #ffa726;
+        color: white;
+        padding: 12px 28px;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: bold;
+        display: inline-block;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 167, 38, 0.3);
+      }
+
+      .btn:hover {
+        background-color: #ff9800;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 167, 38, 0.4);
+      }
+
+      .hero-img img {
+        width: 400px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .products {
+        padding: 80px 10%;
+        background-color: #ffffff;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title h2 {
+        color: #4caf50;
+        font-size: 32px;
+        display: inline-block;
+      }
+
+      .section-title h2:after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 3px;
+        background-color: #ffa726;
+        margin: 15px auto 0;
+      }
+
+      .product-grid {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .product-card {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        padding: 25px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .product-card h3 {
+        color: #388e3c;
+        margin-bottom: 10px;
+      }
+
+      .product-price {
+        font-weight: bold;
+        color: #ffa726;
+        margin: 15px 0;
+        font-size: 18px;
+      }
+
+      .product-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 8px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .product-btn:hover {
+        background-color: #388e3c;
+      }
+
+      .why-eco {
+        background-color: #e8f5e9;
+        padding: 80px 10%;
+        text-align: center;
+      }
+
+      .features {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 50px;
+      }
+
+      .feature {
+        max-width: 280px;
+        margin: 20px;
+      }
+
+      .feature-icon {
+        font-size: 50px;
+        color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      .feature h3 {
+        color: #388e3c;
+        margin-bottom: 15px;
+      }
+
+      .testimonials {
+        padding: 80px 10%;
+        background-color: #fefefe;
+        text-align: center;
+      }
+
+      .testimonial-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .testimonial {
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        padding: 30px;
+        max-width: 350px;
+        text-align: left;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .testimonial p {
+        font-style: italic;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .customer {
+        display: flex;
+        align-items: center;
+      }
+
+      .customer-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        background-color: #e0e0e0;
+      }
+
+      .customer-info h4 {
+        color: #388e3c;
+      }
+
+      .newsletter {
+        background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+        padding: 60px 10%;
+        text-align: center;
+        color: white;
+      }
+
+      .newsletter h2 {
+        margin-bottom: 20px;
+      }
+
+      .newsletter p {
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .newsletter-form input {
+        flex: 1;
+        padding: 15px;
+        border: none;
+        border-radius: 30px 0 0 30px;
+        font-size: 16px;
+      }
+
+      .newsletter-form button {
+        background-color: #ffa726;
+        color: white;
+        border: none;
+        padding: 0 25px;
+        border-radius: 0 30px 30px 0;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .newsletter-form button:hover {
+        background-color: #ff9800;
+      }
+
+      footer {
+        background-color: #2e7d32;
+        color: white;
+        padding: 50px 10% 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 20px;
+        color: #ffa726;
+      }
+
+      .footer-column a {
+        color: #e0e0e0;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-column a:hover {
+        color: white;
+      }
+
+      .social-links a {
+        display: inline-block;
+        margin-right: 15px;
+        font-size: 20px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @media (max-width: 1000px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding: 60px 5%;
+        }
+
+        .hero-text {
+          max-width: 100%;
+          margin-bottom: 40px;
+        }
+
+        .hero-img img {
+          width: 100%;
+          max-width: 400px;
+        }
+
+        .product-grid,
+        .features,
+        .testimonial-grid {
+          gap: 20px;
+        }
+
+        .product-card,
+        .feature,
+        .testimonial {
+          width: 100%;
+          max-width: 350px;
+        }
+
+        .footer-content {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          padding: 20px 5%;
+        }
+
+        .logo {
+          margin-bottom: 15px;
+        }
+
+        nav a {
+          margin: 0 10px;
+          font-size: 14px;
+        }
+
+        .hero-text h1 {
+          font-size: 32px;
+        }
+
+        .newsletter-form {
+          flex-direction: column;
+        }
+
+        .newsletter-form input {
+          border-radius: 30px;
+          margin-bottom: 10px;
+        }
+
+        .newsletter-form button {
+          border-radius: 30px;
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">EcoGadgetHub</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#products">Products</a>
+        <a href="#why-eco">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Go Green with Smart Gadgets 🌿</h1>
+        <p>
+          Discover the future of eco-friendly technology — solar-powered,
+          biodegradable, and built to last. Make a positive impact with every
+          purchase.
+        </p>
+        <a href="#products" class="btn">Explore Products</a>
+      </div>
+      <div class="hero-img">
+        <img
+          src="images\Eco-friendly-gadgets-collection.webp"
+          alt="Eco-friendly gadgets collection"
+        />
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="section-title">
+        <h2>Our Eco-Friendly Picks</h2>
+      </div>
+      <div class="product-grid">
+        <div class="product-card">
+          <img
+            src="images\Solar-Phone-Charger.webp"
+            alt="Solar Phone Charger"
+          />
+          <h3>Solar Phone Charger</h3>
+          <p>
+            Charge your devices using the power of the sun, anywhere you go.
+          </p>
+          <div class="product-price">Rs. 4999.00</div>
+          <a href="#" class="product-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img
+            src="images\Biodegradable-Phone-Case.webp"
+            alt="Biodegradable Phone Case"
+          />
+          <h3>Biodegradable Phone Case</h3>
+          <p>Stylish and 100% compostable phone protection for all models.</p>
+          <div class="product-price">Rs. 2499.00</div>
+          <a href="#" class="product-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img src="images\Smart-Eco-Light.webp" alt="Smart Eco Light" />
+          <h3>Smart Eco Light</h3>
+          <p>Save energy with motion sensor smart lighting for your home.</p>
+          <div class="product-price">Rs. 3999.00</div>
+          <a href="#" class="product-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+          <img
+            src="images\Recycled-Wireless-Earbuds.webp"
+            alt="Recycled Wireless Earbuds"
+          />
+          <h3>Recycled Wireless Earbuds</h3>
+          <p>
+            Premium sound quality with earbuds made from recycled materials.
+          </p>
+          <div class="product-price">Rs. 7999.00</div>
+          <a href="#" class="product-btn">Add to Cart</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="why-eco" id="why-eco">
+      <div class="section-title">
+        <h2>Why Choose EcoGadgetHub?</h2>
+      </div>
+      <p>
+        Every gadget you buy helps reduce e-waste and carbon footprint. Our
+        products are designed to blend sustainability with daily tech needs.
+      </p>
+
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🌞</div>
+          <h3>Solar-Powered Innovation</h3>
+          <p>
+            Harness the sun's energy with our collection of solar-powered
+            gadgets that keep you connected while off-grid.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">♻️</div>
+          <h3>Recyclable Materials</h3>
+          <p>
+            All our products are made with recyclable or biodegradable
+            materials, reducing landfill waste.
+          </p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🌱</div>
+          <h3>Eco-Conscious Manufacturing</h3>
+          <p>
+            We partner exclusively with manufacturers who prioritize sustainable
+            production methods.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="section-title">
+        <h2>What Our Customers Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>
+            "The solar charger works like a charm! I've been using it on my
+            hiking trips, and it's been a reliable power source. I love that I'm
+            reducing my carbon footprint while staying connected."
+          </p>
+          <div class="customer">
+            <div class="customer-info">
+              <h4>Priya Sharma</h4>
+              <span>Adventure Enthusiast</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p>
+            "Finally found tech that aligns with my green lifestyle. The
+            biodegradable phone case is stylish, durable, and I feel good
+            knowing it won't end up in a landfill. Highly recommended!"
+          </p>
+          <div class="customer">
+            <div class="customer-info">
+              <h4>Aarav Mehta</h4>
+              <span>Environmental Activist</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <p>
+            "The Smart Eco Lights have reduced my electricity bill by 30%!
+            They're responsive, bright when needed, and the app control is
+            intuitive. Best investment for my home office."
+          </p>
+          <div class="customer">
+            <div class="customer-info">
+              <h4>Maya Johnson</h4>
+              <span>Remote Worker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <h2>Stay Updated with EcoTech News</h2>
+      <p>
+        Subscribe to our newsletter for the latest sustainable tech innovations,
+        exclusive offers, and eco-friendly tips.
+      </p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+
+    <footer id="contact">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>EcoGadgetHub</h3>
+          <p>
+            Pioneering sustainable tech solutions for a greener future. Every
+            purchase contributes to environmental conservation.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="#">Home</a>
+          <a href="#products">Products</a>
+          <a href="#why-eco">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <a href="#">FAQ</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns & Refunds</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p>123 Green Street, Eco City</p>
+          <p>contact@ecogadgethub.com</p>
+          <p>+1 (555) 123-4567</p>
+          <div class="social-links">
+            <a href="#">📱</a>
+            <a href="#">📘</a>
+            <a href="#">🐦</a>
+            <a href="#">📸</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 EcoGadgetHub. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/serviceworker.js")
+            .then((registration) => {
+              console.log(
+                "✅ Service Worker registered! Scope:",
+                registration.scope
+              );
+
+              // 🔔 Request Push Notification Permission
+              if ("PushManager" in window) {
+                Notification.requestPermission().then((permission) => {
+                  if (permission === "granted") {
+                    console.log("🔔 Push notifications granted.");
+                  } else {
+                    console.log("🔕 Push notifications denied.");
+                  }
+                });
+              }
+
+              // 🔄 Register Background Sync
+              if ("SyncManager" in window) {
+                navigator.serviceWorker.ready.then((swReg) => {
+                  swReg.sync
+                    .register("sync-data")
+                    .then(() => {
+                      console.log("🔄 Sync registered");
+                    })
+                    .catch((err) => {
+                      console.log("❌ Sync registration failed:", err);
+                    });
+                });
+              }
+            })
+            .catch((error) => {
+              console.log("❌ Service Worker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

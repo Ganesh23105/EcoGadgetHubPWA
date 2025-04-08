@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (if you use npm later)
+node_modules/
+
+# Logs
+*.log
+
+# VS Code settings
+.vscode/
